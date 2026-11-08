@@ -7,6 +7,7 @@
 	<v1.7>
 		<li>/</li>
 		<li>1.7</li>
+		<li IfModActive="VanillaExpanded.VPsycastsE">1.7/VPE</li>
 		<li IfModActive="CETeam.CombatExtended,CETeam.CombatExtended_steam">1.7/CE</li>
 	</v1.7>
 </loadFolders>

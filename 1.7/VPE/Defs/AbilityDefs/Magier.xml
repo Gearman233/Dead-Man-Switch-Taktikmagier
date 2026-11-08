@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <VEF.Abilities.AbilityDef Name="DMST_VPE_MagierSpellBase" ParentName="VPE_PsycastBase" Abstract="True">
+    <abilityClass>VEF.Abilities.Ability_Blank</abilityClass>
+  </VEF.Abilities.AbilityDef>
+
+  <VEF.Abilities.AbilityDef ParentName="DMST_VPE_MagierSpellBase">
+    <defName>DMST_VPE_Flash</defName>
+    <label>assault flash</label>
+    <description>Blinds and stuns targets caught in a directional cone.</description>
+    <iconPath>Abilities/Militarmagier/flashlight</iconPath>
+    <targetMode>Location</targetMode>
+    <range>10.9</range>
+    <castTime>15</castTime>
+    <cooldownTime>3600</cooldownTime>
+    <modExtensions>
+      <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+        <path>DMST_VPE_MagierPath</path>
+        <level>1</level>
+        <order>1</order>
+        <psyfocusCost>0.05</psyfocusCost>
+        <entropyGain>12</entropyGain>
+      </li>
+      <li Class="Militarmagier.VPE.AbilityExtension_MagierPsycast">
+        <effect>Flash</effect>
+        <radius>12</radius>
+        <ticks>300</ticks>
+      </li>
+    </modExtensions>
+  </VEF.Abilities.AbilityDef>
+
+  <VEF.Abilities.AbilityDef ParentName="DMST_VPE_MagierSpellBase">
+    <defName>DMST_VPE_Repel</defName>
+    <label>repel</label>
+    <description>A shockwave throws nearby enemies away and stuns them.</description>
+    <iconPath>Abilities/Militarmagier/push</iconPath>
+    <targetMode>Self</targetMode>
+    <castTime>15</castTime>
+    <cooldownTime>3600</cooldownTime>
+    <modExtensions>
+      <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+        <path>DMST_VPE_MagierPath</path>
+        <level>1</level>
+        <order>2</order>
+        <psyfocusCost>0.04</psyfocusCost>
+        <entropyGain>12</entropyGain>
+      </li>
+      <li Class="Militarmagier.VPE.AbilityExtension_MagierPsycast">
+        <effect>Repel</effect>
+        <radius>5.9</radius>
+        <ticks>300</ticks>
+        <damage>DMST_RepelShockWave</damage>
+      </li>
+    </modExtensions>
+  </VEF.Abilities.AbilityDef>
+
+  <VEF.Abilities.AbilityDef ParentName="DMST_VPE_MagierSpellBase">
+    <defName>DMST_VPE_Mark</defName>
+    <label>mark</label>
+    <description>Marks hostile pawns around the selected point.</description>
+    <iconPath>UI/AbilityIcon/markieren</iconPath>
+    <targetMode>Location</targetMode>
+    <range>24.9</range>
+    <radius>2.9</radius>
+    <castTime>30</castTime>
+    <cooldownTime>1200</cooldownTime>
+    <targetingParameters>
+      <canTargetLocations>true</canTargetLocations>
+    </targetingParameters>
+    <modExtensions>
+      <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+        <path>DMST_VPE_MagierPath</path>
+        <level>1</level>
+        <order>3</order>
+        <psyfocusCost>0.01</psyfocusCost>
+        <entropyGain>6</entropyGain>
+      </li>
+      <li Class="Militarmagier.VPE.AbilityExtension_MagierPsycast">
+        <effect>Mark</effect>
+        <radius>2.9</radius>
+        <hediff>DMST_Marked</hediff>
+      </li>
+    </modExtensions>
+  </VEF.Abilities.AbilityDef>
+
+  <VEF.Abilities.AbilityDef ParentName="DMST_VPE_MagierSpellBase">
+    <defName>DMST_VPE_Swap</defName>
+    <label>transposition</label>
+    <description>The caster and a target pawn exchange places.</description>
+    <iconPath>Abilities/Militarmagier/swap</iconPath>
+    <targetMode>Pawn</targetMode>
+    <range>18.9</range>
+    <castTime>120</castTime>
+    <cooldownTime>1200</cooldownTime>
+    <targetingParameters>
+      <canTargetSelf>false</canTargetSelf>
+      <canTargetAnimals>true</canTargetAnimals>
+      <canTargetMechs>true</canTargetMechs>
+      <canTargetHumans>true</canTargetHumans>
+    </targetingParameters>
+    <modExtensions>
+      <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+        <path>DMST_VPE_MagierPath</path>
+        <level>2</level>
+        <order>1</order>
+        <psyfocusCost>0.02</psyfocusCost>
+        <entropyGain>8</entropyGain>
+      </li>
+      <li Class="Militarmagier.VPE.AbilityExtension_MagierPsycast">
+        <effect>Swap</effect>
+      </li>
+    </modExtensions>
+  </VEF.Abilities.AbilityDef>
+
+  <VEF.Abilities.AbilityDef ParentName="DMST_VPE_MagierSpellBase">
+    <defName>DMST_VPE_SteadyAim</defName>
+    <label>steady aim</label>
+    <description>Steadies aim at the cost of movement and firing speed.</description>
+    <iconPath>UI/AbilityIcon/zielhilfe</iconPath>
+    <targetMode>Self</targetMode>
+    <castTime>0</castTime>
+    <cooldownTime>600</cooldownTime>
+    <durationTime>1800</durationTime>
+    <modExtensions>
+      <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+        <path>DMST_VPE_MagierPath</path>
+        <level>2</level>
+        <order>2</order>
+        <psyfocusCost>0.01</psyfocusCost>
+        <entropyGain>6</entropyGain>
+      </li>
+      <li Class="Militarmagier.VPE.AbilityExtension_MagierPsycast">
+        <effect>Stance</effect>
+        <hediff>DMST_SteadyAim</hediff>
+        <ticks>1800</ticks>
+      </li>
+    </modExtensions>
+  </VEF.Abilities.AbilityDef>
+
+  <VEF.Abilities.AbilityDef ParentName="DMST_VPE_MagierSpellBase">
+    <defName>DMST_VPE_Smoke</defName>
+    <label>smoke veil</label>
+    <description>Creates a cloud of dense blinding smoke at the target point.</description>
+    <iconPath>UI/AbilityIcon/nebel</iconPath>
+    <targetMode>Location</targetMode>
+    <range>24.9</range>
+    <radius>3.9</radius>
+    <castTime>60</castTime>
+    <cooldownTime>1800</cooldownTime>
+    <targetingParameters>
+      <canTargetLocations>true</canTargetLocations>
+      <canTargetSelf>true</canTargetSelf>
+    </targetingParameters>
+    <modExtensions>
+      <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+        <path>DMST_VPE_MagierPath</path>
+        <level>2</level>
+        <order>3</order>
+        <psyfocusCost>0.01</psyfocusCost>
+        <entropyGain>10</entropyGain>
+      </li>
+      <li Class="Militarmagier.VPE.AbilityExtension_MagierPsycast">
+        <effect>Smoke</effect>
+        <radius>3.9</radius>
+        <damage>Smoke</damage>
+      </li>
+    </modExtensions>
+  </VEF.Abilities.AbilityDef>
+
+  <VEF.Abilities.AbilityDef ParentName="DMST_VPE_MagierSpellBase">
+    <defName>DMST_VPE_ConstructTurret</defName>
+    <label>assemble turret construct</label>
+    <description>Consumes a stamped component to assemble a temporary turret.</description>
+    <iconPath>Abilities/Militarmagier/summonTurret</iconPath>
+    <targetMode>Location</targetMode>
+    <range>8.9</range>
+    <castTime>180</castTime>
+    <cooldownTime>1200</cooldownTime>
+    <targetingParameters>
+      <canTargetItems>true</canTargetItems>
+      <canTargetLocations>true</canTargetLocations>
+      <canTargetBuildings>false</canTargetBuildings>
+      <canTargetPawns>false</canTargetPawns>
+    </targetingParameters>
+    <modExtensions>
+      <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+        <path>DMST_VPE_MagierPath</path>
+        <level>3</level>
+        <order>1</order>
+        <psyfocusCost>0.01</psyfocusCost>
+        <entropyGain>5</entropyGain>
+      </li>
+      <li Class="Militarmagier.VPE.AbilityExtension_MagierPsycast">
+        <effect>ConstructTurret</effect>
+        <costDef>ComponentStamped</costDef>
+        <thingDef>DMST_Turret_Sentry</thingDef>
+      </li>
+    </modExtensions>
+  </VEF.Abilities.AbilityDef>
+
+  <VEF.Abilities.AbilityDef ParentName="DMST_VPE_MagierSpellBase">
+    <defName>DMST_VPE_ConstructPawn</defName>
+    <label>assemble gargoyle construct</label>
+    <description>Consumes a stamped component to assemble a controlled gargoyle.</description>
+    <iconPath>Abilities/Militarmagier/summonMech</iconPath>
+    <targetMode>Location</targetMode>
+    <range>8.9</range>
+    <castTime>360</castTime>
+    <cooldownTime>1200</cooldownTime>
+    <targetingParameters>
+      <canTargetItems>true</canTargetItems>
+      <canTargetLocations>true</canTargetLocations>
+      <canTargetBuildings>false</canTargetBuildings>
+      <canTargetPawns>false</canTargetPawns>
+    </targetingParameters>
+    <modExtensions>
+      <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+        <path>DMST_VPE_MagierPath</path>
+        <level>3</level>
+        <order>2</order>
+        <psyfocusCost>0.01</psyfocusCost>
+        <entropyGain>5</entropyGain>
+      </li>
+      <li Class="Militarmagier.VPE.AbilityExtension_MagierPsycast">
+        <effect>ConstructPawn</effect>
+        <costDef>ComponentStamped</costDef>
+        <pawnKindDef>DMST_Construct_Gargoyle</pawnKindDef>
+      </li>
+    </modExtensions>
+  </VEF.Abilities.AbilityDef>
+
+  <VEF.Abilities.AbilityDef ParentName="DMST_VPE_MagierSpellBase">
+    <defName>DMST_VPE_QuickDraw</defName>
+    <label>quick draw</label>
+    <description>Temporarily accelerates reflexive shooting at the cost of accuracy.</description>
+    <iconPath>Abilities/Militarmagier/quickdraw</iconPath>
+    <targetMode>Self</targetMode>
+    <castTime>0</castTime>
+    <cooldownTime>600</cooldownTime>
+    <durationTime>300</durationTime>
+    <modExtensions>
+      <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+        <path>DMST_VPE_MagierPath</path>
+        <level>3</level>
+        <order>3</order>
+        <psyfocusCost>0.01</psyfocusCost>
+        <entropyGain>6</entropyGain>
+      </li>
+      <li Class="Militarmagier.VPE.AbilityExtension_MagierPsycast">
+        <effect>Stance</effect>
+        <hediff>DMST_QuickDraw</hediff>
+        <ticks>300</ticks>
+      </li>
+    </modExtensions>
+  </VEF.Abilities.AbilityDef>
+
+  <VEF.Abilities.AbilityDef ParentName="DMST_VPE_MagierSpellBase">
+    <defName>DMST_VPE_FieldRepair</defName>
+    <label>field repair</label>
+    <description>Repairs allied mechs and buildings.</description>
+    <iconPath>UI/AbilityIcon/instandsetzung</iconPath>
+    <targetMode>Pawn</targetMode>
+    <range>9.9</range>
+    <castTime>120</castTime>
+    <cooldownTime>600</cooldownTime>
+    <targetingParameters>
+      <canTargetSelf>false</canTargetSelf>
+      <canTargetMechs>true</canTargetMechs>
+      <canTargetHumans>false</canTargetHumans>
+      <canTargetAnimals>false</canTargetAnimals>
+      <canTargetBuildings>true</canTargetBuildings>
+    </targetingParameters>
+    <modExtensions>
+      <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+        <path>DMST_VPE_MagierPath</path>
+        <level>3</level>
+        <order>4</order>
+        <psyfocusCost>0.02</psyfocusCost>
+        <entropyGain>12</entropyGain>
+      </li>
+      <li Class="Militarmagier.VPE.AbilityExtension_MagierPsycast">
+        <effect>FieldRepair</effect>
+        <amount>40</amount>
+      </li>
+    </modExtensions>
+  </VEF.Abilities.AbilityDef>
+
+  <VEF.Abilities.AbilityDef ParentName="DMST_VPE_MagierSpellBase">
+    <defName>DMST_VPE_EmpBurst</defName>
+    <label>EMP burst</label>
+    <description>Discharges a powerful EMP around the caster.</description>
+    <iconPath>Abilities/Militarmagier/empBurst</iconPath>
+    <targetMode>Self</targetMode>
+    <radius>14.9</radius>
+    <castTime>60</castTime>
+    <cooldownTime>3600</cooldownTime>
+    <modExtensions>
+      <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+        <path>DMST_VPE_MagierPath</path>
+        <level>4</level>
+        <order>1</order>
+        <psyfocusCost>0.01</psyfocusCost>
+        <entropyGain>20</entropyGain>
+      </li>
+      <li Class="Militarmagier.VPE.AbilityExtension_MagierPsycast">
+        <effect>EmpBurst</effect>
+        <radius>14.9</radius>
+        <damage>EMP</damage>
+        <amount>40</amount>
+      </li>
+    </modExtensions>
+  </VEF.Abilities.AbilityDef>
+
+  <VEF.Abilities.AbilityDef ParentName="DMST_VPE_MagierSpellBase">
+    <defName>DMST_VPE_FieldAid</defName>
+    <label>field aid</label>
+    <description>Tends all current injuries on a psychically sensitive pawn.</description>
+    <iconPath>Abilities/Militarmagier/heal</iconPath>
+    <targetMode>Pawn</targetMode>
+    <range>3.9</range>
+    <castTime>300</castTime>
+    <cooldownTime>600</cooldownTime>
+    <targetingParameters>
+      <canTargetSelf>true</canTargetSelf>
+      <canTargetAnimals>true</canTargetAnimals>
+      <canTargetMechs>true</canTargetMechs>
+      <canTargetHumans>true</canTargetHumans>
+    </targetingParameters>
+    <modExtensions>
+      <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+        <path>DMST_VPE_MagierPath</path>
+        <level>4</level>
+        <order>2</order>
+        <psyfocusCost>0.04</psyfocusCost>
+        <entropyGain>15</entropyGain>
+        <psychic>true</psychic>
+      </li>
+      <li Class="Militarmagier.VPE.AbilityExtension_MagierPsycast">
+        <effect>FieldAid</effect>
+        <tendQualityMin>0.4</tendQualityMin>
+        <tendQualityMax>0.8</tendQualityMax>
+      </li>
+    </modExtensions>
+  </VEF.Abilities.AbilityDef>
+
+  <VEF.Abilities.AbilityDef ParentName="DMST_VPE_MagierSpellBase">
+    <defName>DMST_VPE_Ward</defName>
+    <label>ward</label>
+    <description>Protects a pawn with a short-lived psychic shield.</description>
+    <iconPath>UI/AbilityIcon/schild</iconPath>
+    <targetMode>Pawn</targetMode>
+    <range>9.9</range>
+    <castTime>60</castTime>
+    <cooldownTime>1800</cooldownTime>
+    <durationTime>1800</durationTime>
+    <targetingParameters>
+      <canTargetSelf>true</canTargetSelf>
+      <canTargetAnimals>true</canTargetAnimals>
+      <canTargetMechs>true</canTargetMechs>
+      <canTargetHumans>true</canTargetHumans>
+    </targetingParameters>
+    <modExtensions>
+      <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+        <path>DMST_VPE_MagierPath</path>
+        <level>4</level>
+        <order>3</order>
+        <psyfocusCost>0.02</psyfocusCost>
+        <entropyGain>15</entropyGain>
+      </li>
+      <li Class="Militarmagier.VPE.AbilityExtension_MagierPsycast">
+        <effect>Ward</effect>
+        <hediff>DMST_Ward</hediff>
+        <ticks>1800</ticks>
+      </li>
+    </modExtensions>
+  </VEF.Abilities.AbilityDef>
+
+  <VEF.Abilities.AbilityDef ParentName="DMST_VPE_MagierSpellBase">
+    <defName>DMST_VPE_ForceWake</defName>
+    <label>force wake</label>
+    <description>Restores the caster's rest and mood.</description>
+    <iconPath>Abilities/Militarmagier/forceWake</iconPath>
+    <targetMode>Self</targetMode>
+    <castTime>120</castTime>
+    <cooldownTime>1200</cooldownTime>
+    <modExtensions>
+      <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+        <path>DMST_VPE_MagierPath</path>
+        <level>5</level>
+        <order>1</order>
+        <psyfocusCost>0.04</psyfocusCost>
+        <entropyGain>10</entropyGain>
+      </li>
+      <li Class="Militarmagier.VPE.AbilityExtension_MagierPsycast">
+        <effect>ForceWake</effect>
+        <thought>DMST_ForceWake</thought>
+      </li>
+    </modExtensions>
+  </VEF.Abilities.AbilityDef>
+
+  <VEF.Abilities.AbilityDef ParentName="DMST_VPE_MagierSpellBase">
+    <defName>DMST_VPE_Demolish</defName>
+    <label>demolish</label>
+    <description>Destroys a weak building or severely damages a stronger one.</description>
+    <iconPath>Abilities/Militarmagier/demolish</iconPath>
+    <targetMode>Location</targetMode>
+    <range>10.9</range>
+    <castTime>90</castTime>
+    <cooldownTime>1200</cooldownTime>
+    <targetingParameters>
+      <canTargetLocations>true</canTargetLocations>
+      <canTargetBuildings>true</canTargetBuildings>
+      <canTargetHumans>false</canTargetHumans>
+      <canTargetAnimals>false</canTargetAnimals>
+      <canTargetMechs>false</canTargetMechs>
+      <canTargetItems>false</canTargetItems>
+    </targetingParameters>
+    <modExtensions>
+      <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+        <path>DMST_VPE_MagierPath</path>
+        <level>5</level>
+        <order>2</order>
+        <psyfocusCost>0.04</psyfocusCost>
+        <entropyGain>15</entropyGain>
+      </li>
+      <li Class="Militarmagier.VPE.AbilityExtension_MagierPsycast">
+        <effect>Demolish</effect>
+        <points>800</points>
+        <factor>0.25</factor>
+      </li>
+    </modExtensions>
+  </VEF.Abilities.AbilityDef>
+</Defs>

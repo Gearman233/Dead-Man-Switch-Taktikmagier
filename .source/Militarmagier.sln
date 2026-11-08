@@ -5,6 +5,11 @@ VisualStudioVersion = 17.14.36202.13 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Militarmagier", "Militarmagier\Militarmagier.csproj", "{DAD38E4D-7C64-49BE-9DF5-6F9E9503AA0C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Militarmagier.VPE", "Militarmagier.VPE\Militarmagier.VPE.csproj", "{BEACBD4A-34C4-4C60-BC42-9180845BF98E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DAD38E4D-7C64-49BE-9DF5-6F9E9503AA0C} = {DAD38E4D-7C64-49BE-9DF5-6F9E9503AA0C}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +20,10 @@ Global
 		{DAD38E4D-7C64-49BE-9DF5-6F9E9503AA0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DAD38E4D-7C64-49BE-9DF5-6F9E9503AA0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DAD38E4D-7C64-49BE-9DF5-6F9E9503AA0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEACBD4A-34C4-4C60-BC42-9180845BF98E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEACBD4A-34C4-4C60-BC42-9180845BF98E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEACBD4A-34C4-4C60-BC42-9180845BF98E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEACBD4A-34C4-4C60-BC42-9180845BF98E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

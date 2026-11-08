@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace>Militarmagier.VPE</RootNamespace>
+    <AssemblyName>Militarmagier.VPE</AssemblyName>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <LangVersion>10.0</LangVersion>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GenerateDependencyFile>false</GenerateDependencyFile>
+    <DebugType>none</DebugType>
+    <RimWorldDir Condition="'$(RimWorldDir)' == ''">$(MSBuildThisFileDirectory)..\..\..\..\</RimWorldDir>
+    <OutputPath>$(MSBuildThisFileDirectory)..\..\1.7\VPE\Assemblies\</OutputPath>
+    <BaseOutputPath>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Dead-Man-Switch-Taktikmagier-main\1.7\Assemblies</BaseOutputPath>
+    <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp"><HintPath>$(RimWorldDir)Assembly-CSharp.dll</HintPath><Private>False</Private></Reference>
+    <Reference Include="UnityStubs"><HintPath>$(RimWorldDir)UnityStubs.dll</HintPath><Private>False</Private></Reference>
+    <Reference Include="Waylith"><HintPath>$(RimWorldDir)Waylith.dll</HintPath><Private>False</Private></Reference>
+    <Reference Include="0Harmony"><HintPath>$(RimWorldDir)..\..\workshop\content\294100\2009463077\1.7\Assemblies\0Harmony.dll</HintPath><Private>False</Private></Reference>
+    <Reference Include="VEF"><HintPath>$(RimWorldDir)..\..\workshop\content\294100\2023507013\1.7\Assemblies\VEF.dll</HintPath><Private>False</Private></Reference>
+    <Reference Include="VanillaPsycastsExpanded"><HintPath>$(RimWorldDir)..\..\workshop\content\294100\2842502659\1.7\Assemblies\VanillaPsycastsExpanded.dll</HintPath><Private>False</Private></Reference>
+    <Reference Include="Militarmagier"><HintPath>$(MSBuildThisFileDirectory)..\..\1.7\Assemblies\Militarmagier.dll</HintPath><Private>False</Private></Reference>
+    <Reference Include="Fortified"><HintPath>$(RimWorldDir)..\..\workshop\content\294100\3498575851\1.7\Assemblies\Fortified.dll</HintPath><Private>False</Private></Reference>
+  </ItemGroup>
+</Project>

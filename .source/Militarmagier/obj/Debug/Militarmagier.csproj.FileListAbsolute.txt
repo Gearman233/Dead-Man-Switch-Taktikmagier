@@ -125,3 +125,4 @@ D:\Steam\steamapps\common\RimWorld\Mods\_Dead-Man-Switch-Taktikmagier\.source\Mi
 D:\Steam\steamapps\common\RimWorld\Mods\_Dead-Man-Switch-Taktikmagier\.source\Militarmagier\bin\Debug\Fortified.dll
 D:\Steam\steamapps\common\RimWorld\Mods\_Dead-Man-Switch-Taktikmagier\.source\Militarmagier\bin\Debug\0MultiplayerAPI.dll
 D:\Steam\steamapps\common\RimWorld\Mods\_Dead-Man-Switch-Taktikmagier\.source\Militarmagier\bin\Debug\System.Buffers.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Dead-Man-Switch-Taktikmagier-main\.source\Militarmagier\obj\Debug\Militarmagier.dll

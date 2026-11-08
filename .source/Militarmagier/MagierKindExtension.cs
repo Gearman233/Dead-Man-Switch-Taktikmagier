@@ -1,6 +1,8 @@
 using RimWorld;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using Verse;
 
 namespace Militarmagier
@@ -47,6 +49,11 @@ namespace Militarmagier
 
             GivePsylink(pawn);
 
+            if (ApplyVPEKit(pawn))
+            {
+                return;
+            }
+
             List<AbilityDef> candidates = DefDatabase<AbilityDef>.AllDefsListForReading
                 .Where(def => def.HasModExtension<MagierSpellExtension>()
                     && def.level >= spellLevelRange.min
@@ -65,6 +72,13 @@ namespace Militarmagier
             {
                 GiveManual(pawn);
             }
+        }
+
+        private bool ApplyVPEKit(Pawn pawn)
+        {
+            Type bridge = Type.GetType("Militarmagier.VPE.VPEBridge, Militarmagier.VPE");
+            MethodInfo apply = bridge?.GetMethod("ApplyPawnKit", BindingFlags.Public | BindingFlags.Static);
+            return apply != null && (bool)apply.Invoke(null, new object[] { pawn, this });
         }
 
         /// <summary>

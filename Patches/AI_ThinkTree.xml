@@ -16,15 +16,26 @@
         If this patch ever fails (a future version renaming the tree), RimWorld logs a patch
         error and the mod still loads - AI magiers simply fall back to shooting.
     -->
-    <Operation Class="PatchOperationAdd">
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Vanilla Psycasts Expanded</li>
+        </mods>
+        <match Class="PatchOperationAdd">
+            <xpath>Defs/ThinkTreeDef[defName="HumanlikeConstant"]/thinkRoot/subNodes</xpath>
+            <value>
+                <li Class="Militarmagier.VPE.JobGiver_TaktikmagierCombat" />
+            </value>
+        </match>
         <!--
             Appended, not prepended, on purpose: the vanilla constant nodes ahead of it handle
             things that must win over casting - escaping fire, dropping a burning weapon,
             reacting to being drafted. A magier who is on fire should run, not cast Flash.
         -->
-        <xpath>Defs/ThinkTreeDef[defName="HumanlikeConstant"]/thinkRoot/subNodes</xpath>
-        <value>
-            <li Class="Militarmagier.JobGiver_TaktikmagierCombat" />
-        </value>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>Defs/ThinkTreeDef[defName="HumanlikeConstant"]/thinkRoot/subNodes</xpath>
+            <value>
+                <li Class="Militarmagier.JobGiver_TaktikmagierCombat" />
+            </value>
+        </nomatch>
     </Operation>
 </Patch>

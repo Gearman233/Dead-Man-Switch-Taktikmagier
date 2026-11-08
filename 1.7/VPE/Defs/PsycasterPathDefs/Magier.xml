@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <VanillaPsycastsExpanded.PsycasterPathDef>
+    <defName>DMST_VPE_MagierPath</defName>
+    <label>military psycasts</label>
+    <description>Military psycasts trained by the Colonization Fleet.</description>
+    <tab>Psycasts</tab>
+    <background>Path/background</background>
+    <tooltip>Magier battle techniques, maintained through the VPE psycast system.</tooltip>
+  </VanillaPsycastsExpanded.PsycasterPathDef>
+</Defs>
